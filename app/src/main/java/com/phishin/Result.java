@@ -1,0 +1,98 @@
+package com.phishin;
+
+
+import com.google.gson.annotations.Expose;
+
+
+public class Result<Entity>
+{
+    @Expose
+    private Boolean success;
+
+    @Expose
+    private String message;
+
+    @Expose
+    private Integer total_entries;
+
+    @Expose
+    private Integer total_pages;
+
+    @Expose
+    private Integer page;
+
+    @Expose
+    private Entity data;
+
+
+    public Boolean getSuccess()
+    {
+        return success;
+    }
+
+
+    public void setSuccess( Boolean success )
+    {
+        this.success = success;
+    }
+
+
+    public String getMessage()
+    {
+        return message;
+    }
+
+
+    public void setMessage( String message )
+    {
+        this.message = message;
+    }
+
+
+    public Integer getTotal_entries()
+    {
+        return total_entries;
+    }
+
+
+    public void setTotal_entries( Integer total_entries )
+    {
+        this.total_entries = total_entries;
+    }
+
+
+    public Integer getTotal_pages()
+    {
+        return total_pages;
+    }
+
+
+    public void setTotal_pages( Integer total_pages )
+    {
+        this.total_pages = total_pages;
+    }
+
+
+    public Integer getPage()
+    {
+        return page;
+    }
+
+
+    public void setPage( Integer page )
+    {
+        this.page = page;
+    }
+
+
+    public Entity getData()
+    {
+        return data;
+    }
+
+
+    public void setData( Entity data )
+    {
+        this.data = data;
+    }
+}
