@@ -7,10 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Track
-{
+/**
+ * Created by Rob Munroe on 5/10/14.
+ */
+public class Track {
     @Expose
     private Integer id;
+
+    @Expose
+    private Integer show_id;
 
     @Expose
     private String title;
@@ -39,123 +44,108 @@ public class Track
     @Expose
     private List<Integer> song_ids = new ArrayList<Integer>();
 
+    @Expose
+    private List<Song> songs = new ArrayList<Song>();
 
-    public Integer getId()
-    {
+
+    public Integer getId() {
         return id;
     }
 
-
-    public void setId( Integer id )
-    {
+    public void setId(Integer id) {
         this.id = id;
     }
 
+    public Integer getShow_id() {
+        return show_id;
+    }
 
-    public String getTitle()
-    {
+    public void setShow_id(Integer show_id) {
+        this.show_id = show_id;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-
-    public void setTitle( String title )
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-
-    public Integer getPosition()
-    {
+    public Integer getPosition() {
         return position;
     }
 
-
-    public void setPosition( Integer position )
-    {
+    public void setPosition(Integer position) {
         this.position = position;
     }
 
-
-    public Integer getDuration()
-    {
+    public Integer getDuration() {
         return duration;
     }
 
-
-    public void setDuration( Integer duration )
-    {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 
-
-    public String getSet()
-    {
+    public String getSet() {
         return set;
     }
 
-
-    public void setSet( String set )
-    {
+    public void setSet(String set) {
         this.set = set;
     }
 
-
-    public String getSet_name()
-    {
+    public String getSet_name() {
         return set_name;
     }
 
-
-    public void setSet_name( String set_name )
-    {
+    public void setSet_name(String set_name) {
         this.set_name = set_name;
     }
 
-
-    public Integer getLikes_count()
-    {
+    public Integer getLikes_count() {
         return likes_count;
     }
 
-
-    public void setLikes_count( Integer likes_count )
-    {
+    public void setLikes_count(Integer likes_count) {
         this.likes_count = likes_count;
     }
 
-
-    public String getSlug()
-    {
+    public String getSlug() {
         return slug;
     }
 
-
-    public void setSlug( String slug )
-    {
+    public void setSlug(String slug) {
         this.slug = slug;
     }
 
-
-    public String getMp3()
-    {
+    public String getMp3() {
         return mp3;
     }
 
-
-    public void setMp3( String mp3 )
-    {
+    public void setMp3(String mp3) {
         this.mp3 = mp3;
     }
 
-
-    public List<Integer> getSong_ids()
-    {
+    public List<Integer> getSong_ids() {
         return song_ids;
     }
 
-
-    public void setSong_ids( List<Integer> song_ids )
-    {
+    public void setSong_ids(List<Integer> song_ids) {
         this.song_ids = song_ids;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
+    @Override
+    public String toString() {
+        return this.title;
     }
 }

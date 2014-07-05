@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Song
-{
+/**
+ * Created by Rob Munroe on 5/10/14.
+ */
+public class Song {
     @Expose
     private Integer id;
 
@@ -28,74 +30,56 @@ public class Song
     private List<Track> tracks = new ArrayList<Track>();
 
 
-    public Integer getId()
-    {
+    public Integer getId() {
         return id;
     }
 
-
-    public void setId( Integer id )
-    {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
-
-    public void setTitle( String title )
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-
-    public Object getAlias_for()
-    {
+    public Object getAlias_for() {
         return alias_for;
     }
 
-
-    public void setAlias_for( Object alias_for )
-    {
+    public void setAlias_for(Object alias_for) {
         this.alias_for = alias_for;
     }
 
-
-    public Integer getTracks_count()
-    {
+    public Integer getTracks_count() {
         return tracks_count;
     }
 
-
-    public void setTracks_count( Integer tracks_count )
-    {
+    public void setTracks_count(Integer tracks_count) {
         this.tracks_count = tracks_count;
     }
 
-
-    public String getSlug()
-    {
+    public String getSlug() {
         return slug;
     }
 
-
-    public void setSlug( String slug )
-    {
+    public void setSlug(String slug) {
         this.slug = slug;
     }
 
-
-    public List<Track> getTracks()
-    {
+    public List<Track> getTracks() {
         return tracks;
     }
 
-
-    public void setTracks( List<Track> tracks )
-    {
+    public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
+    }
+
+    @Override
+    public String toString() {
+        return this.getTitle();
     }
 }

@@ -2,13 +2,13 @@
 <pre-dex-items>
 
     <item
-        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD-Android/app/build/intermediates/pre-dexed/debug/retrofit-1.5.1-f869a90a0286c1ca6b34682fe8cd2bdc95c999a5.jar"
+        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD_Android/app/build/intermediates/pre-dexed/debug/retrofit-1.5.1-f869a90a0286c1ca6b34682fe8cd2bdc95c999a5.jar"
         jar="/Users/robert/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.5.1/266695d62b6df0e1176af2be3634bcd0837d4fbd/retrofit-1.5.1.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="266695d62b6df0e1176af2be3634bcd0837d4fbd"/>
     <item
-        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD-Android/app/build/intermediates/pre-dexed/debug/gson-2.2.4-e9afe12dc280d90d9ea2b8a1e65371f835083953.jar"
+        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD_Android/app/build/intermediates/pre-dexed/debug/gson-2.2.4-e9afe12dc280d90d9ea2b8a1e65371f835083953.jar"
         jar="/Users/robert/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
         jumboMode="false"
         revision="20.0.0"
