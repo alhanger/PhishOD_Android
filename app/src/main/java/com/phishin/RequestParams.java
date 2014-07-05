@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Used for parameterized / paged requests
- * Created by robert on 7/5/14.
+ * Created by Rob Munroe on 7/5/14.
  */
 public class RequestParams {
     public static final int DEFAULT_PER_PAGE = 20;

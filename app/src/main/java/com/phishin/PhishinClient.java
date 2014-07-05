@@ -22,13 +22,26 @@ import retrofit.RestAdapter;
  * Created by Rob Munroe on 5/3/14.
  */
 public class PhishinClient {
+    private static PhishinClient singleton = null;
+
+    public static PhishinClient getInstance() {
+        if (singleton == null) {
+            synchronized (PhishinClient.class) {
+                if (singleton == null) {
+                    singleton = new PhishinClient();
+                }
+            }
+        }
+        return singleton;
+    }
+
     private PhishinService service;
 
 
     /**
      * Default constructor. Instantiates the underlying Retrofit service.
      */
-    public PhishinClient() {
+    protected PhishinClient() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("http://phish.in/api/v1")
                 .setLogLevel(RestAdapter.LogLevel.FULL)

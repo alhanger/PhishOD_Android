@@ -17,13 +17,13 @@ import com.phishin.entities.Venue;
 import java.util.List;
 
 /**
- * Created by robert on 7/5/14.
+ * Created by Rob Munroe on 7/5/14.
  */
 public class PhishinClientTester extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
 
-        PhishinClient client = new PhishinClient();
+        PhishinClient client = PhishinClient.getInstance();
 
         try {
             RequestParams requestParams = new RequestParams(1, 5);

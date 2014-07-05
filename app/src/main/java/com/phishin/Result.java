@@ -3,9 +3,13 @@ package com.phishin;
 
 import com.google.gson.annotations.Expose;
 
-
-public class Result<Entity>
-{
+/**
+ * The generic wrapper around the request's payload. See http://phish.in/api-docs for more info.
+ * Created by Rob Munroe on 5/10/14.
+ *
+ * @param <Entity> The type of object returned by the request as the 'data' element.
+ */
+public class Result<Entity> {
     @Expose
     private Boolean success;
 
@@ -27,69 +31,58 @@ public class Result<Entity>
 
     /**
      * If true then the last request can be called again with an incremented pageNumber
+     *
      * @return true if there are more pages
      */
     public Boolean hasMorePages() {
         return (this.page < this.total_pages);
     }
 
-    public Boolean getSuccess()
-    {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess( Boolean success )
-    {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
 
-    public String getMessage()
-    {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage( String message )
-    {
+    public void setMessage(String message) {
         this.message = message;
     }
 
-    public Integer getTotal_entries()
-    {
+    public Integer getTotal_entries() {
         return total_entries;
     }
 
-    public void setTotal_entries( Integer total_entries )
-    {
+    public void setTotal_entries(Integer total_entries) {
         this.total_entries = total_entries;
     }
 
-    public Integer getTotal_pages()
-    {
+    public Integer getTotal_pages() {
         return total_pages;
     }
 
-    public void setTotal_pages( Integer total_pages )
-    {
+    public void setTotal_pages(Integer total_pages) {
         this.total_pages = total_pages;
     }
 
-    public Integer getPage()
-    {
+    public Integer getPage() {
         return page;
     }
 
-    public void setPage( Integer page )
-    {
+    public void setPage(Integer page) {
         this.page = page;
     }
 
-    public Entity getData()
-    {
+    public Entity getData() {
         return data;
     }
 
-    public void setData( Entity data )
-    {
+    public void setData(Entity data) {
         this.data = data;
     }
 }
