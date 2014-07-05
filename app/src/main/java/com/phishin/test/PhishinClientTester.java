@@ -30,8 +30,6 @@ public class PhishinClientTester extends AsyncTask<Void, Void, String> {
 
             Era era1 = client.getEra(1);
 
-            List<Era> allEras = client.getAllEras();
-
             List<String> allYears = client.getAllYears();
 
             List<Show> year = client.getYear("1994");
@@ -85,6 +83,28 @@ public class PhishinClientTester extends AsyncTask<Void, Void, String> {
             if (tourSearch.hasTours()) {
                 System.out.println("First Tour Found: " + tourSearch.getTours().get(0).getName());
             }
+
+
+            // Lazy loading testing:
+            List<Era> allEras = client.getAllEras();
+            Era era3 = allEras.get(2); // 3.0
+            String year2009name = era3.getYears().get(0); // 2009
+
+            List<Show> year2009 = client.getYear(year2009name);
+            Show incompleteShow = year2009.get(0);
+            List<Track> lazyTracks = incompleteShow.getTracks(); // Tracks will lazy load
+            Track firstTrack = lazyTracks.get(0);
+            Show dynaShow = firstTrack.getShow();
+            List<Song> lazySongs = firstTrack.getSongs();
+            Song firstSong = lazySongs.get(0);
+            List<Track> lazyTracks2gen = firstSong.getTracks();
+            Track lazyTrack2gen = lazyTracks2gen.get(0);
+            List<Song> lazySong2gen = lazyTrack2gen.getSongs();
+
+            Venue lazyVenue = incompleteShow.getVenue(); // Venue will already be lazy loaded by the previous line
+
+            List<String> showDates = lazyVenue.getShow_dates(); // Show dates will lazy load (2nd generation lazy loading)
+            List<Show> venueShows = lazyVenue.getShows(); // Shows is dynamically populated; it's not in the API
 
             String catchMe = "foo";
 
