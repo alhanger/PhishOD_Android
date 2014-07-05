@@ -109,7 +109,6 @@ public class PhishinClient {
 
     /**
      * Returns the List of Shows for a given String year name.
-     * NOTE: The Shows' Tracks and Venue are not returned by the API. Call getShow(id) to retrieve the complete Show instance.
      *
      * @param year The String year name, e.g. "1994"
      * @return List of all Shows for the given year
@@ -127,7 +126,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Songs. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Songs' Tracks are not returned by the API. Call getSong(id) to retrieve the complete Song instance.
      *
      * @param pageNumber the page number to request
      * @param perPage    the count of results per page
@@ -141,7 +139,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Songs. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Songs' Tracks are not returned by the API. Call getSong(id) to retrieve the complete Song instance.
      *
      * @param requestParams a RequestParams instance
      * @return List of Song
@@ -159,7 +156,6 @@ public class PhishinClient {
 
     /**
      * Fetches a single Song by id.
-     * NOTE: The Tracks returned are incomplete. Call getTrack(id) to retrieve the complete Track instance.
      *
      * @param id the Song's id
      * @return the Song instance
@@ -177,7 +173,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Tours. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Tours' Shows are not returned by the API. Call getTour(id) to retrieve the complete Tour instance.
      *
      * @param pageNumber the page number to request
      * @param perPage    the count of results per page
@@ -191,7 +186,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Tours. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Tours' Shows are not returned by the API. Call getTour(id) to retrieve the complete Tour instance.
      *
      * @param requestParams a RequestParams instance
      * @return List of Tours
@@ -209,7 +203,6 @@ public class PhishinClient {
 
     /**
      * The complete List of All Tours.
-     * NOTE: The Tours' Shows are not returned by the API. Call getTour(id) to retrieve the complete Tour instance.
      *
      * @return List of All Tours
      * @throws RequestException
@@ -220,7 +213,6 @@ public class PhishinClient {
 
     /**
      * Fetches a single Tour by id.
-     * NOTE: The Shows returned by the API are incomplete. Call getShow(id) to retrieve the complete Show instance.
      *
      * @param id the Tour's id
      * @return the Tour instance
@@ -238,7 +230,6 @@ public class PhishinClient {
 
     /**
      * Returns a List of Venues sorted by the number of times played there, descendingly.
-     * NOTE: The Venues returned by the API are not complete (namely show_ids and show_dates). Call getVenue(id) to retrieve the complete Venue instance.
      *
      * @param count the length of the list, eg. 5 for the top 5 most-played Venues
      * @return List of Venues
@@ -251,7 +242,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Venues. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Venues returned by the API are not complete (namely show_ids and show_dates). Call getVenue(id) to retrieve the complete Venue instance.
      *
      * @param pageNumber the page number to request
      * @param perPage    the count of results per page
@@ -265,7 +255,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Venues. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Venues returned by the API are not complete (namely show_ids and show_dates). Call getVenue(id) to retrieve the complete Venue instance.
      *
      * @param requestParams a RequestParams instance
      * @return List of Venues
@@ -300,7 +289,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Shows. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Shows returned by the API are incomplete. Call getShow(id) to retrieve the complete Show instance.
      *
      * @param pageNumber the page number to request
      * @param perPage    the count of results per page
@@ -314,7 +302,6 @@ public class PhishinClient {
 
     /**
      * Returns the Result of a page from the List of All Shows. Use the Result to determine what the next page should be, and if there are additional pages to fetch.
-     * NOTE: The Shows returned by the API are incomplete. Call getShow(id) to retrieve the complete Show instance.
      *
      * @param requestParams a RequestParams instance
      * @return List of Shows
@@ -332,7 +319,6 @@ public class PhishinClient {
 
     /**
      * Fetches a single Show by id.
-     * NOTE: The Shows' Tracks and Venue returned by the API are incomplete. Call getTrack(id) and getVenue(id) to retrieve the complete instances.
      *
      * @param id the Show's id
      * @return the Show instance
@@ -350,7 +336,6 @@ public class PhishinClient {
 
     /**
      * Fetches a random Show
-     * NOTE: The Shows' Tracks and Venue returned by the API are incomplete. Call getTrack(id) and getVenue(id) to retrieve the complete instances.
      *
      * @return the Show instance
      * @throws RequestException
@@ -367,7 +352,6 @@ public class PhishinClient {
 
     /**
      * Fetches a single Track by id
-     * NOTE: The Track's Songs returned by the API are incomplete. Call getSong(id) to retrieve the complete instance.
      *
      * @param id the Track's id
      * @return the Track instance
@@ -385,7 +369,6 @@ public class PhishinClient {
 
     /**
      * Performs a search using the given term. See the Search class for more info on doSearch results.
-     * NOTE: Most of the various result objects are incomplete. Call the appropriate getFoo(id) method on each for the complete instance.
      *
      * @param term Any String search term
      * @return A Search instance containing the search results

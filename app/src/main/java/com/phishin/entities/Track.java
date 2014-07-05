@@ -2,6 +2,8 @@ package com.phishin.entities;
 
 
 import com.google.gson.annotations.Expose;
+import com.phishin.PhishinClient;
+import com.phishin.RequestException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,8 @@ import java.util.List;
 public class Track {
     @Expose
     private Integer id;
+
+    private Show show;
 
     @Expose
     private Integer show_id;
@@ -56,7 +60,20 @@ public class Track {
         this.id = id;
     }
 
+    public Show getShow() {
+        if (this.show == null) {
+            if (this.show_id == null) update();
+            try {
+                this.show = PhishinClient.getInstance().getShow(this.show_id);
+            } catch (RequestException e) {
+                e.printStackTrace();
+            }
+        }
+        return this.show;
+    }
+
     public Integer getShow_id() {
+        if (this.show_id == null) update();
         return show_id;
     }
 
@@ -137,6 +154,7 @@ public class Track {
     }
 
     public List<Song> getSongs() {
+        if (this.songs == null || this.songs.size() == 0) update();
         return songs;
     }
 
@@ -147,5 +165,15 @@ public class Track {
     @Override
     public String toString() {
         return this.title;
+    }
+
+    private void update() {
+        try {
+            Track obj = PhishinClient.getInstance().getTrack(this.id);
+            this.show_id = obj.show_id;
+            this.songs = obj.songs;
+        } catch (RequestException e) {
+            e.printStackTrace();
+        }
     }
 }

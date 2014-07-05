@@ -2,6 +2,8 @@ package com.phishin.entities;
 
 
 import com.google.gson.annotations.Expose;
+import com.phishin.PhishinClient;
+import com.phishin.RequestException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,7 @@ public class Tour {
     }
 
     public List<Show> getShows() {
+        if (this.shows == null || this.shows.size() == 0) update();
         return shows;
     }
 
@@ -91,5 +94,14 @@ public class Tour {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    private void update() {
+        try {
+            Tour obj = PhishinClient.getInstance().getTour(this.id);
+            this.shows = obj.shows;
+        } catch (RequestException e) {
+            e.printStackTrace();
+        }
     }
 }

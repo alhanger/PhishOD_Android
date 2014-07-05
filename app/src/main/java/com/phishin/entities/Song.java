@@ -2,6 +2,8 @@ package com.phishin.entities;
 
 
 import com.google.gson.annotations.Expose;
+import com.phishin.PhishinClient;
+import com.phishin.RequestException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +73,7 @@ public class Song {
     }
 
     public List<Track> getTracks() {
+        if (this.tracks == null || this.tracks.size() == 0) this.update();
         return tracks;
     }
 
@@ -81,5 +84,14 @@ public class Song {
     @Override
     public String toString() {
         return this.getTitle();
+    }
+
+    private void update() {
+        try {
+            Song obj = PhishinClient.getInstance().getSong(this.id);
+            this.tracks = obj.tracks;
+        } catch (RequestException e) {
+            e.printStackTrace();
+        }
     }
 }

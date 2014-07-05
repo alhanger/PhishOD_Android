@@ -2,6 +2,8 @@ package com.phishin.entities;
 
 
 import com.google.gson.annotations.Expose;
+import com.phishin.PhishinClient;
+import com.phishin.RequestException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +120,8 @@ public class Show {
     }
 
     public Venue getVenue() {
-        return venue;
+        if (this.venue == null) this.update();
+        return this.venue;
     }
 
     public void setVenue(Venue venue) {
@@ -126,7 +129,8 @@ public class Show {
     }
 
     public List<Track> getTracks() {
-        return tracks;
+        if (this.tracks == null || this.tracks.size() == 0) this.update();
+        return this.tracks;
     }
 
     public void setTracks(List<Track> tracks) {
@@ -139,5 +143,15 @@ public class Show {
         if (this.venue != null)
             display += " " + this.venue.getName() + ", " + this.venue.getLocation();
         return display;
+    }
+
+    private void update() {
+        try {
+            Show obj = PhishinClient.getInstance().getShow(this.id);
+            this.venue = obj.venue;
+            this.tracks = obj.tracks;
+        } catch (RequestException e) {
+            e.printStackTrace();
+        }
     }
 }
