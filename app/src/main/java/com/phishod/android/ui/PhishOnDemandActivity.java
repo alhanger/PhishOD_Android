@@ -17,9 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.phishin.PhishInApi;
+import com.phishin.PhishinClient;
 import com.phishod.android.R;
 
 public class PhishOnDemandActivity extends FragmentActivity implements ActionBar.TabListener {
+
+    private PhishInApi mApi;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,6 +43,7 @@ public class PhishOnDemandActivity extends FragmentActivity implements ActionBar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mApi = new PhishInApi(new PhishinClient());
         setContentView(R.layout.activity_phish_on_demand);
 
         // Set up the action bar.
@@ -127,6 +132,11 @@ public class PhishOnDemandActivity extends FragmentActivity implements ActionBar
 
         @Override
         public Fragment getItem(int position) {
+            if (position == 0){
+                YearsFragmentFragment fragmentFragment = YearsFragmentFragment.newInstance();
+                fragmentFragment.setApi(mApi);
+                return fragmentFragment;
+            }
             return PlaceholderFragment.newInstance(position);
         }
 

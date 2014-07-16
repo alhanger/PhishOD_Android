@@ -23,7 +23,7 @@ public class PhishinClientTester extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
 
-        PhishinClient client = PhishinClient.getInstance();
+        PhishinClient client = new PhishinClient();
 
         try {
             RequestParams requestParams = new RequestParams(1, 5);

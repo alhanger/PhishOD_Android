@@ -2,8 +2,15 @@
 <resources>
 
     <string name="app_name">Phish OD</string>
-    <string name="title_activity_test">TestActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_phish_on_demand">PhishOnDemand</string>
 
+    <string-array name="tab_titles">
+        <item>Years</item>
+        <item>Venues</item>
+        <item>Songs</item>
+        <item>Map</item>
+        <item>Top 40</item>
+        <item>Playlists</item>
+    </string-array>
 </resources>

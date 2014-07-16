@@ -22,18 +22,6 @@ import retrofit.RestAdapter;
  * Created by Rob Munroe on 5/3/14.
  */
 public class PhishinClient {
-    private static PhishinClient singleton = null;
-
-    public static PhishinClient getInstance() {
-        if (singleton == null) {
-            synchronized (PhishinClient.class) {
-                if (singleton == null) {
-                    singleton = new PhishinClient();
-                }
-            }
-        }
-        return singleton;
-    }
 
     private PhishinService service;
 
@@ -41,7 +29,7 @@ public class PhishinClient {
     /**
      * Default constructor. Instantiates the underlying Retrofit service.
      */
-    protected PhishinClient() {
+    public PhishinClient() {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("http://phish.in/api/v1")
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -68,7 +56,7 @@ public class PhishinClient {
         Result<List<String>> result = this.service.getEra(id);
 
         if (result.getSuccess()) {
-            Era era = new Era();
+            Era era = new Era(this);
             era.setName(id.toString() + ".0");
             era.setYears(result.getData());
             return era;

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Rob Munroe on 5/10/14.
  */
-public class Tour {
+public class Tour extends BaseModel {
     @Expose
     private Integer id;
 
@@ -33,6 +33,9 @@ public class Tour {
     @Expose
     private List<Show> shows = new ArrayList<Show>();
 
+    public Tour(PhishinClient client) {
+        super(client);
+    }
 
     public Integer getId() {
         return id;
@@ -98,7 +101,7 @@ public class Tour {
 
     private void update() {
         try {
-            Tour obj = PhishinClient.getInstance().getTour(this.id);
+            Tour obj = getClient().getTour(this.id);
             this.shows = obj.shows;
         } catch (RequestException e) {
             e.printStackTrace();

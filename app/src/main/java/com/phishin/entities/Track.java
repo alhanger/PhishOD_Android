@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Rob Munroe on 5/10/14.
  */
-public class Track {
+public class Track extends BaseModel {
     @Expose
     private Integer id;
 
@@ -52,6 +52,10 @@ public class Track {
     private List<Song> songs = new ArrayList<Song>();
 
 
+    public Track(PhishinClient client) {
+        super(client);
+    }
+
     public Integer getId() {
         return id;
     }
@@ -64,7 +68,7 @@ public class Track {
         if (this.show == null) {
             if (this.show_id == null) update();
             try {
-                this.show = PhishinClient.getInstance().getShow(this.show_id);
+                this.show = getClient().getShow(this.show_id);
             } catch (RequestException e) {
                 e.printStackTrace();
             }
@@ -169,7 +173,7 @@ public class Track {
 
     private void update() {
         try {
-            Track obj = PhishinClient.getInstance().getTrack(this.id);
+            Track obj = getClient().getTrack(this.id);
             this.show_id = obj.show_id;
             this.songs = obj.songs;
         } catch (RequestException e) {

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Rob Munroe on 5/10/14.
  */
-public class Song {
+public class Song extends BaseModel {
     @Expose
     private Integer id;
 
@@ -31,6 +31,9 @@ public class Song {
     @Expose
     private List<Track> tracks = new ArrayList<Track>();
 
+    public Song(PhishinClient client) {
+        super(client);
+    }
 
     public Integer getId() {
         return id;
@@ -88,7 +91,7 @@ public class Song {
 
     private void update() {
         try {
-            Song obj = PhishinClient.getInstance().getSong(this.id);
+            Song obj = getClient().getSong(this.id);
             this.tracks = obj.tracks;
         } catch (RequestException e) {
             e.printStackTrace();

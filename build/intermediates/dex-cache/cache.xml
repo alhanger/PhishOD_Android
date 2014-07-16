@@ -2,16 +2,16 @@
 <pre-dex-items>
 
     <item
-        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD_Android/app/build/intermediates/pre-dexed/debug/retrofit-1.5.1-f869a90a0286c1ca6b34682fe8cd2bdc95c999a5.jar"
-        jar="/Users/robert/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.5.1/266695d62b6df0e1176af2be3634bcd0837d4fbd/retrofit-1.5.1.jar"
+        dex="/Users/benjamin/redwoolf/phish-od/PhishOD_Android/app/build/intermediates/pre-dexed/debug/rxjava-android-0.20.0-RC1-bb07e34c475f183c89ff837efd2c378d3dce88f4.jar"
+        jar="/Users/benjamin/.gradle/caches/modules-2/files-2.1/com.netflix.rxjava/rxjava-android/0.20.0-RC1/5bd915c5aaabbd35884e14229f447cfddb149423/rxjava-android-0.20.0-RC1.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="266695d62b6df0e1176af2be3634bcd0837d4fbd"/>
+        sha1="5bd915c5aaabbd35884e14229f447cfddb149423"/>
     <item
-        dex="/Volumes/Space/CloudStation/Development/PhishOD/Source/PhishOD_Android/app/build/intermediates/pre-dexed/debug/gson-2.2.4-e9afe12dc280d90d9ea2b8a1e65371f835083953.jar"
-        jar="/Users/robert/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        dex="/Users/benjamin/redwoolf/phish-od/PhishOD_Android/app/build/intermediates/pre-dexed/debug/rxjava-core-0.20.0-RC1-47441b545378327e25fa6a74e4d346094731429d.jar"
+        jar="/Users/benjamin/.gradle/caches/modules-2/files-2.1/com.netflix.rxjava/rxjava-core/0.20.0-RC1/ccecdab24d1861260e95edd4f9a0b0c181e8f6ab/rxjava-core-0.20.0-RC1.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568"/>
+        sha1="ccecdab24d1861260e95edd4f9a0b0c181e8f6ab"/>
 
 </pre-dex-items>
