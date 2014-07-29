@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,14 +11,12 @@ import android.widget.ListView;
 
 import com.phishin.PhishInApi;
 import com.phishin.entities.Era;
-import com.phishod.android.R;
 import com.phishod.android.ui.views.EraHeaderRowView;
 import com.phishod.android.ui.views.YearRowView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -37,14 +34,14 @@ import rx.schedulers.Schedulers;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class YearsFragmentFragment extends ListFragment {
+public class YearsFragment extends ListFragment {
 
-    public static final String TAG = YearsFragmentFragment.class.getName();
+    public static final String TAG = YearsFragment.class.getName();
 
     private PhishInApi mApi;
 
-    public static YearsFragmentFragment newInstance() {
-        YearsFragmentFragment fragment = new YearsFragmentFragment();
+    public static YearsFragment newInstance() {
+        YearsFragment fragment = new YearsFragment();
         return fragment;
     }
 
@@ -52,7 +49,7 @@ public class YearsFragmentFragment extends ListFragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public YearsFragmentFragment() {
+    public YearsFragment() {
     }
 
     public void setApi(PhishInApi api) {

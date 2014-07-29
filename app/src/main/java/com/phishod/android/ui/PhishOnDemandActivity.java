@@ -133,7 +133,7 @@ public class PhishOnDemandActivity extends FragmentActivity implements ActionBar
         @Override
         public Fragment getItem(int position) {
             if (position == 0){
-                YearsFragmentFragment fragmentFragment = YearsFragmentFragment.newInstance();
+                YearsFragment fragmentFragment = YearsFragment.newInstance();
                 fragmentFragment.setApi(mApi);
                 return fragmentFragment;
             }
