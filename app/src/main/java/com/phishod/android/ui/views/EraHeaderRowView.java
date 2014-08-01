@@ -8,9 +8,6 @@ import android.widget.TextView;
 
 import com.phishod.android.R;
 
-/**
- * Created by benjamin on 7/15/14.
- */
 public class EraHeaderRowView extends FrameLayout {
 
     private TextView mEra;

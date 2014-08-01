@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.phishin.PhishInApi;
 import com.phishin.PhishinClient;
+import com.phishod.android.PhishODApplication;
 import com.phishod.android.R;
 
 public class PhishOnDemandActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -43,7 +44,7 @@ public class PhishOnDemandActivity extends FragmentActivity implements ActionBar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApi = new PhishInApi(new PhishinClient());
+        PhishODApplication.injectDependencies(this);
         setContentView(R.layout.activity_phish_on_demand);
 
         // Set up the action bar.
@@ -134,7 +135,6 @@ public class PhishOnDemandActivity extends FragmentActivity implements ActionBar
         public Fragment getItem(int position) {
             if (position == 0){
                 YearsFragment fragmentFragment = YearsFragment.newInstance();
-                fragmentFragment.setApi(mApi);
                 return fragmentFragment;
             }
             return PlaceholderFragment.newInstance(position);

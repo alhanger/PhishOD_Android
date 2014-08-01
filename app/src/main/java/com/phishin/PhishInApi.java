@@ -18,7 +18,7 @@ import rx.Observable;
 import rx.Subscriber;
 
 /**
- * Created by benjamin on 7/8/14.
+ * The interface to the Phish.in api
  */
 public class PhishInApi {
 

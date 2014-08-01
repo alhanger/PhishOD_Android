@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.phishin.PhishInApi;
 import com.phishin.entities.Era;
+import com.phishod.android.PhishODApplication;
 import com.phishod.android.ui.views.EraHeaderRowView;
 import com.phishod.android.ui.views.YearRowView;
 
@@ -20,6 +21,8 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+
+import javax.inject.Inject;
 
 import rx.Observable;
 
@@ -38,7 +41,8 @@ public class YearsFragment extends ListFragment {
 
     public static final String TAG = YearsFragment.class.getName();
 
-    private PhishInApi mApi;
+    @Inject
+    PhishInApi mApi;
 
     public static YearsFragment newInstance() {
         YearsFragment fragment = new YearsFragment();
@@ -52,13 +56,10 @@ public class YearsFragment extends ListFragment {
     public YearsFragment() {
     }
 
-    public void setApi(PhishInApi api) {
-        mApi = api;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PhishODApplication.injectDependencies(this);
     }
 
     @Override
